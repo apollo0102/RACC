@@ -2,7 +2,6 @@ import { useTotalSupply, useName } from '../../hooks/DDEFIREContract'
 import React, { useState, useEffect, Fragment, useRef } from 'react'
 import AppLayout from '../AppLayout'
 import './Home.scss'
-import { Menu, Transition } from '@headlessui/react'
 import { ChevronDownIcon, PlusIcon, MinusIcon } from '@heroicons/react/solid'
 import { useEthers, shortenAddress, Mainnet, Ropsten } from '@usedapp/core'
 import { toast } from 'react-toastify'
@@ -26,7 +25,6 @@ const Home = () => {
   var [mintPriceByUser, setMintPriceByUser] = useState([0.12])
   var [mintNumber, setMintNumber] = useState([7880])
   const [limit, setLimit] = useState([4])
-  
   
   const plusMint = ()=>{
     if(tokens < limit)
@@ -101,9 +99,22 @@ const Home = () => {
             </span>
           </li>
           <li>
-            <button className='text-white mt-8 bg-[#ff0000] rounded-[50px] px-8 py-2 text-md font-bold tracking-[0.1em] hover:shadow-[-4px_4px_0px_-0px_white] focus:shadow-[-4px_4px_0px_-0px_white] transition ease-in-out delay-300'>
-              Connect Wallet
+
+          {!account ? (
+            <button className='text-white mt-8 bg-[#ff0000] rounded-[50px] px-8 py-2 text-md font-bold tracking-[0.1em] hover:shadow-[-4px_4px_0px_-0px_white] focus:shadow-[-4px_4px_0px_-0px_white] transition ease-in-out duration-300'
+             onClick={handleConnect}
+            >
+              CONNECT WALLET
             </button>
+                ) : (
+                  <button className='text-white mt-8 bg-[#ff0000] rounded-[50px] px-8 py-2 text-md font-bold tracking-[0.1em] hover:shadow-[-4px_4px_0px_-0px_white] focus:shadow-[-4px_4px_0px_-0px_white] transition ease-in-out duration-300'
+                    onClick={() => deactivate()}
+                  >
+                    {shortenAddress(account)}
+                  </button>
+                )}
+
+            
           </li>
           <li>
             <div className='flex justify-center items-center gap-x-16 my-10'>
