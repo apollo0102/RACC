@@ -9,13 +9,12 @@ export default function Header() {
   const [isNavOpen, setIsNavOpen] = useState(false) // initiate isNavOpen state with false
 
   return (
-    <div className='flex items-center justify-between pb-8'>
+    <div className='flex items-center justify-between'>
       <nav className='w-full'>
         <div className='max-w-7xl mx-auto py-3 px-12 sm:px-16 lg:px-20'>
           <div className='flex items-center justify-between h-16'>
             <div className='flex justify-between items-center w-full'>
               <div className='hidden md:block flex-shrink-0'>
-                {/* <IconLogo></IconLogo> */}
                 <a className='logo' href='/#'>
                   <img
                     src={Logo}
