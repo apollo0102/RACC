@@ -1,4 +1,6 @@
- 
+ nav{
+  background: linear-gradient(180deg, #0c0026 0%, rgba(12, 0, 42, 0) 100%);
+ }
     a.menuItem {
       text-decoration: none;
       -webkit-transition: 0.3s ease-in;
@@ -63,6 +65,7 @@
   // background: url("../../assets/images/lap-off-bg-img.png");
   background: linear-gradient(180deg, #0f2264 0%, #170047 100%);
   z-index: 10;
+  height: 220%;
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
@@ -70,5 +73,77 @@
   li {
     opacity: 1;
     transform: translateY(0);
+  }
+}
+
+@keyframes change2 {
+  0% {
+    transform: scale(0.6);
+  }
+
+  25% {
+    transform: scale(1.1);
+  }
+
+  50% {
+    transform: scale(0.7);
+  }
+
+  75% {
+    transform: scale(1.2);
+  }
+
+  100% {
+    transform: scale(0.6);
+  }
+}
+
+@keyframes change {
+  0% {
+    transform: rotate(0);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes new {
+  0% {
+    transform: scale(0.9);
+  }
+
+  25% {
+    transform: scale(1);
+  }
+
+  50% {
+    transform: scale(0.9);
+  }
+
+  75% {
+    transform: scale(1);
+  }
+
+  100% {
+    transform: scale(0.9);
+  }
+}
+
+@media (max-width: 400px) {
+  .star1 {
+    max-width: 10px;
+  }
+
+  .star2 {
+    max-width: 8px;
+  }
+
+  .star3 {
+    max-width: 10px;
+  }
+
+  .star4 {
+    max-width: 12px;
   }
 }
