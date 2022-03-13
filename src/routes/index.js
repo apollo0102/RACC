@@ -29,6 +29,7 @@ const AppRoutes = () => {
         closeOnClick
         icon={true}
         theme={'colored'}
+        
         pauseOnHover={false}
         rtl={false}
       />
